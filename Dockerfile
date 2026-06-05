@@ -16,11 +16,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 ENV PORT=10000
 EXPOSE 10000
 
-RUN chmod +x /app/build.sh
+RUN chmod +x build.sh
 
 
 # Start the Django application
-CMD ["sh", "-c", "/app/build.sh && gunicorn myproject.wsgi:application --bind 0.0.0.0:$PORT"]
+CMD ["/bin/bash", "-c", "./build.sh && gunicorn your_project_name.wsgi:application --bind 0.0.0.0:$PORT"]
 
 
 
