@@ -1,0 +1,10 @@
+/* Change background color */
+body {
+    background-color: #ec2323;
+}
+
+/* Change header color */
+.module caption {
+    background-color: #444;
+    color: #1f0953;
+}

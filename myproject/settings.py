@@ -64,7 +64,12 @@ TEMPLATES = [
 
 
 WSGI_APPLICATION = "myproject.wsgi.application"
-
+    
+STORAGES = {
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 
 
 myenv = os.getenv("MY_ENV","prod")
