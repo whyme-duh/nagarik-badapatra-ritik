@@ -13,7 +13,8 @@ COPY . /app/
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Expose the port the app runs on
-EXPOSE 8000
+ENV PORT=10000
+EXPOSE 10000
 
 # Start the Django application
 CMD ["sh", "-c", "python manage.py migrate && python manage.py collectstatic --noinput && gunicorn myproject.wsgi:application --bind 0.0.0.0:$PORT"]
