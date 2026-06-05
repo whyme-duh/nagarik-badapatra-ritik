@@ -10,11 +10,12 @@ COPY ./requirements.txt /app/
 
 COPY . /app/
 
-RUN pip install -r requirements.txt && python manage.py collectstatic --noinput
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Expose the port the app runs on
 EXPOSE 8000
 
 # Start the Django application
-CMD ["gunicorn", "myproject.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD ["sh", "-c", "python manage.py migrate && python manage.py collectstatic --noinput && gunicorn myproject.wsgi:application --bind 0.0.0.0:$PORT"]
+
 
