@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Nagarik Badapatra | Citizen Charter|Nepal</title>
+  <link rel="icon" type="image/png" href="https://home.techprogramming.org/wp-content/uploads/2025/02/favicon-32x32-1.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* General Styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: #E45415;
+      color: white;
+    }
+
+    .logo img {
+      max-height: 89px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    nav ul li {
+      margin-left: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 1.2rem;
+    }
+
+    nav ul li a:hover {
+      color: #ffcc00;
+    }
+
+    /* Box Model */
+    .content-box {
+     width: 80%;
+     max-width: 800px; /* Set a max width */
+     margin: 50px auto; /* Center the box */
+     background: white;
+     padding: 30px; /* Increased padding */
+     border-radius: 10px;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+     text-align: left; /* Keep text left-aligned */
+     animation: fadeInUp 1.5s ease-in-out;
+   }
+
+   .content-box h2 {
+     text-align: center; /* Center the title */
+     font-size: 2rem;
+     margin-bottom: 15px;
+   }
+
+   .content-box p {
+     font-size: 1.2rem;
+     color: #555;
+     text-align: left;
+   }
+
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .content-box h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .content-box p {
+      font-size: 1.2rem;
+      color: #555;
+    }
+
+    .about-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-top: 15px;
+      max-height: 200px; /* Small size fit */
+    }
+
+    /* Footer */
+    footer {
+      background-color: #E45415;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+      nav ul li {
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="{{ global_logo }}" alt="Logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="https://forms.gle/BzW8JQUfahtb9to27" target="_blank">Order Now</a></li>
+        <li><a href="/contact/">Contact Us</a></li>
+        <li><a href="/about/">About Us</a></li> 
+        <li><a href="/privacy/">Privacy and Policy</a></li> 
+        <li><a href="/terms/">Terms and Conditions</a></li>
+        <li><a href="/faqs/">FAQS</a></li>  
+      </ul>
+    </nav>
+  </header>
+
+  <div class="content-box">
+    <h1>{{ about.title }}</h1>
+    <p>{{ about.description }}</p>
+    {% if about.image %}
+      <img src="{{ about.image.url }}" alt="About Image" class="about-image">
+    {% endif %}
+  </div>
+
+  <footer>
+    Copyright © 2025 Nagarik Badapatra Nepal. All Rights Reserved.
+  </footer>
+</body>
+</html>

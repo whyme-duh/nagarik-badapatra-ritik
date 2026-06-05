@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.env
+*.env
+
+# Docker
+*.pid
+dist/
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# Coverage reports
+htmlcov/
+.coverage
+
+# Logs
+logs/
+*.log
+
+# Ignore node_modules if using frontend assets
+node_modules/
+
+# Ignore compiled Python files
+*.pyc
+*.pyo
+*.pyd
+
+
+media/
+env/
+staticfiles/
+static/
+db.sqlite3

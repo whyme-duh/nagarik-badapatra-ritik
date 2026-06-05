@@ -1,0 +1,178 @@
+<!-- templates/pages/home.html -->
+{% load static %}
+<link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Nagarik Badapatra | Citizen Charter|Nepal</title>
+  <link rel="icon" type="image/png" href="https://home.techprogramming.org/wp-content/uploads/2025/02/favicon-32x32-1.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* General Styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+      animation: fadeIn 1.5s ease-in-out;
+      padding-bottom: 50px; /* Add padding at the bottom to prevent content overlap */
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Header Section */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: #E45415;
+      color: white;
+    }
+
+    .logo img {
+      max-height: 89px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    nav ul li {
+      margin-left: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 1.2rem;
+    }
+
+    nav ul li a:hover {
+      color: #ffcc00;
+    }
+
+    /* Welcome Section */
+    .welcome-section {
+      text-align: center;
+      padding: 100px 20px;
+      background-color: white;
+      color: black;
+      animation: slideIn 1s ease-in-out;
+    }
+
+    .welcome-section h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .welcome-section p {
+      font-size: 1.5rem;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    /* Site Title Section */
+    .site-title {
+      text-align: center;
+      padding: 20px;
+      font-size: 1.5rem;
+      background-color: #ecf0f1;
+    }
+
+    /* Footer Section */
+    footer {
+      background-color: #E45415;
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* Animation Keyframes */
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav ul li {
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="/">
+        {% if logo_url %}
+        <img src="{{ global_logo }}" alt="Logo">
+        {% else %}
+          <img src="/static/default-logo.png" alt="Default Logo"> <!-- Provide a default logo -->
+        {% endif %}
+      </a>
+    </div>
+    
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="https://forms.gle/BzW8JQUfahtb9to27" target="_blank">Order Now</a></li>
+        <li><a href="/contact/">Contact Us</a></li>
+        <li><a href="/about/">About Us</a></li> 
+        <li><a href="/privacy/">Privacy and Policy</a></li> 
+        <li><a href="/terms/">Terms and Conditions</a></li> 
+        <li><a href="/faqs/">FAQS</a></li> 
+      </ul>
+    </nav>
+  </header>
+
+  <div class="welcome-section">
+    <h1>{{ welcome_title }}</h1>
+    <p>{{ welcome_text }}</p>
+  </div>
+
+  <footer>
+    Copyright © 2025 Nagarik Badapatra Nepal. All Rights Reserved.
+  </footer>
+</body>
+</html>
+
+<ul>
+  {% for page in pages %}
+    <li><a href="{% url 'page_detail' slug=page.slug %}">{{ page.title }}</a></li>
+  {% endfor %}
+</ul>
